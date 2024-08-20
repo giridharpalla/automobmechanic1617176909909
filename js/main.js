@@ -1,13 +1,24 @@
-// Add JavaScript Code here
-// Home Page: Display company information
+// Function to display company information on the Home page
 function displayHomeInfo() {
     const homeElement = document.getElementById('home');
     if (homeElement) {
-        homeElement.innerHTML = "<h1>Welcome to AutoMob-Mechanic</h1><p>Your trusted automobile service/repair company.</p>";
+        homeElement.innerHTML = `
+            <h1>Welcome to AutoMob-Mechanic</h1>
+            <p>Your trusted automobile service/repair company.</p>
+            <button id="explore-btn">Explore</button>
+        `;
+
+        // Add event listener to the Explore button
+        const exploreButton = document.getElementById('explore-btn');
+        if (exploreButton) {
+            exploreButton.addEventListener('click', function() {
+                window.location.href = 'services.html';
+            });
+        }
     }
 }
 
-// Login: Validate username and password
+// Function to validate login credentials
 function validateLogin() {
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
@@ -16,6 +27,7 @@ function validateLogin() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const messageElement = document.getElementById('login-message');
+
             if (username === 'user' && password === 'password') {
                 messageElement.textContent = 'Login successful!';
                 window.location.href = 'home.html';
@@ -26,7 +38,7 @@ function validateLogin() {
     }
 }
 
-// Reports: Display booking information
+// Function to display booking reports
 function displayReports() {
     const reportsElement = document.getElementById('reports');
     if (reportsElement) {
@@ -52,8 +64,7 @@ function displayReports() {
     }
 }
 
-
-// Services: Display services provided by the company
+// Function to display services provided by the company
 function displayServices() {
     const servicesElement = document.getElementById('services');
     if (servicesElement) {
@@ -67,7 +78,7 @@ function displayServices() {
     }
 }
 
-// Preventive Maintenance Service: Display details
+// Function to display details of preventive maintenance services
 function displayPreventiveMaintenanceService() {
     const pmsElement = document.getElementById('pms');
     if (pmsElement) {
@@ -75,7 +86,7 @@ function displayPreventiveMaintenanceService() {
     }
 }
 
-// Body Repair Service: Display details
+// Function to display details of body repair services
 function displayBodyRepairService() {
     const brsElement = document.getElementById('brs');
     if (brsElement) {
@@ -83,7 +94,7 @@ function displayBodyRepairService() {
     }
 }
 
-// Car Care Service: Display details
+// Function to display details of car care services
 function displayCarCareService() {
     const ccsElement = document.getElementById('ccs');
     if (ccsElement) {
@@ -91,7 +102,7 @@ function displayCarCareService() {
     }
 }
 
-// Booking: Handle form submission
+// Function to handle booking form submission
 function handleBooking() {
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
@@ -106,7 +117,7 @@ function handleBooking() {
     }
 }
 
-// Booking Success: Display confirmation message
+// Function to display booking success confirmation
 function displayBookingSuccess() {
     const successElement = document.getElementById('booking-success');
     if (successElement) {
@@ -114,7 +125,7 @@ function displayBookingSuccess() {
     }
 }
 
-// Logout: Handle user logout
+// Function to handle user logout
 function handleLogout() {
     const logoutButton = document.getElementById('logout');
     if (logoutButton) {
